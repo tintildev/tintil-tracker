@@ -1,0 +1,25 @@
+# Compiled class files & build directories
+target/
+build/
+*.class
+
+# Log files
+*.log
+
+# IDE specific files (IntelliJ, Eclipse, VS Code)
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.vscode/
+
+# Operating System system files
+.DS_Store
+Thumbs.db
+
+# Environment variables & secrets
+.env
+*.local
