@@ -23,6 +23,23 @@ Das Projekt wird im Rahmen eines fokussierten 6-Wochen-Entwicklungszyklus als Fu
 - **React** (mit Vite)
 - **Tailwind CSS** (Utility-First Styling)
 
+
+## Architektur & Projektstrutkru
+Ich möchte im Backend eine **Schichten-Architektur (Layered Architecture)** nutzen zur strikten Trennung von Zuständigkeiten (*Separation of Concerns*).
+
+```text
+com.tintil.tintiltracker
+├── controller   # REST-Endpunkte & HTTP-Routing (JSON I/O)
+├── service      # Geschäftslogik & Validierungen
+├── repository   # Datenbanzugriff via Spring Data JPA
+└── model        # Datenbank-Entities (Domain Model)
+```
+
+### Schichtenmodell:
+1. **Controller Layer (`@RestController`):** Nimmt HTTP-Anfragen entgegen, steuert Statuscodes und delegiert an die Service-Schicht.
+2. **Service Layer (`@Service`):** Kapselt die reine Geschäftslogik. Unabhängig von HTTP und Datenbankspezifika.
+3. **Repository Layer (`@Repository`):** Abstrahiert Datenbankabfragen über JPA/Hibernate.
+4. **Model Layer (`@Entity`):** Definiert das objektrelationale Mapping (ORM) für die Datenbanktabellen.
 ---
 
 ## 🚀 Roadmap
