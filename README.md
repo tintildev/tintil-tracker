@@ -13,7 +13,7 @@ Das Projekt wird im Rahmen eines fokussierten 6-Wochen-Entwicklungszyklus als Fu
 ## 🛠 Geplanter Tech Stack
 
 ### Backend
-- **Java 17+**
+- **Java 21+**
 - **Spring Boot 3.x** (REST API)
 - **Spring Data JPA**
 - **H2** (Entwicklung) / **PostgreSQL** (Produktion)
@@ -33,6 +33,7 @@ Das Projekt wird im Rahmen eines fokussierten 6-Wochen-Entwicklungszyklus als Fu
 - [ ] REST Controller & CRUD Endpunkte
 - [ ] Integrationstest der API
 - [ ] Frontend-Setup (React + Vite + Tailwind CSS)
+- [ ] Deployment & Docker-Containerisierung (Dockerfile & docker-compose)
 - [ ] Dashboard & Kanban-/Task-Ansichten
 - [ ] Ausführliche Anwendungs-Dokumentation & Setup-Guide
 
