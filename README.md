@@ -28,7 +28,7 @@ Das Projekt wird im Rahmen eines fokussierten 6-Wochen-Entwicklungszyklus als Fu
 ## 🚀 Roadmap
 
 - [x] Repository-Setup, Lizenz & Dokumentation (Initial)
-- [ ] Backend API Fundament (Spring Boot Initialisierung)
+- [x] Backend API Fundament (Spring Boot Initialisierung)
 - [ ] Datenmodellierung (Entities: `Project`, `Task`)
 - [ ] REST Controller & CRUD Endpunkte
 - [ ] Integrationstest der API
