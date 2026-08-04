@@ -6,7 +6,8 @@ Ein universeller, webbasierter Projekt- und Task-Tracker zur Verwaltung von Soft
 
 Ziel von **Tintil Tracker** ist es, eine flexible Plattform zu schaffen, auf der Projekte unterschiedlichster Natur (Dev-Projekte, Heimwerken, Lernen) strukturiert in Phasen und Aufgaben unterteilt und visuell nachverfolgt werden können.
 
-Das Projekt wird im Rahmen eines fokussierten 6-Wochen-Entwicklungszyklus als Full-Stack-Anwendung neu aufgebaut.
+Das Projekt wird im Rahmen eines fokussierten 6-Wochen-Entwicklungszyklus als Full-Stack-Anwendung aufgebaut. 
+Das wichtigste für mich ist zu lernen, neue Technologien kennen zu lernen und nicht nur stumpf KI Vorschlägen zu folgen.
 
 ---
 
@@ -25,7 +26,7 @@ Das Projekt wird im Rahmen eines fokussierten 6-Wochen-Entwicklungszyklus als Fu
 
 
 ## Architektur & Projektstrutkru
-Ich möchte im Backend eine **Schichten-Architektur (Layered Architecture)** nutzen zur strikten Trennung von Zuständigkeiten (*Separation of Concerns*).
+Ich entscheide in diesen Projekt für ein Backend mit **Schichten-Architektur (Layered Architecture)** zur strikten Trennung von Zuständigkeiten (*Separation of Concerns*). Weg von MVC Architektur hin zu einem modernen Standard. 
 
 ```text
 com.tintil.tintiltracker
