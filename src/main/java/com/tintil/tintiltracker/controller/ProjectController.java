@@ -22,15 +22,15 @@ import com.tintil.tintiltracker.repository.ProjectRepository;
 @RequestMapping("/api/projects")
 public class ProjectController {
 
-    private final ProjectRepository projectRepository;
+    private final ProjectService projectService;
 
     /**
-     * Erstellt einen neuen REST-Controller mit Dependency Injection des Repositories.
+     * Erstellt einen neuen REST-Controller mit Dependency Injection des Services.
      *
-     * @param projectRepository Das Repository für den Datenzugriff auf Projekte.
+     * @param projectService Der Service für den Datenzugriff auf Projekte.
      */
-    public ProjectController(ProjectRepository projectRepository) {
-        this.projectRepository = projectRepository;
+    public ProjectController(ProjectService projectService) {
+        this.projectService = projectService;
     }
 
     /**
@@ -41,7 +41,7 @@ public class ProjectController {
      */
     @GetMapping
     public List<Project> getAllProjects() {
-        return projectRepository.findAll();
+        return projectService.getAllProjects();
     }
 
     /**
@@ -53,7 +53,7 @@ public class ProjectController {
      */
     @PostMapping
     public ResponseEntity<Project> createProject(@RequestBody Project project) {
-        Project savedProject = projectRepository.save(project);
+        Project savedProject = projectService.createProject(project);
         return new ResponseEntity<>(savedProject, HttpStatus.CREATED);
     }
 
@@ -66,7 +66,7 @@ public class ProjectController {
      */
     @GetMapping("/{id}")
     public ResponseEntity<Project> getProjectById(@PathVariable Long id) {
-        return projectRepository.findById(id)
+        return projectService.getProjectById(id)
                 .map(project -> ResponseEntity.ok(project))
                 .orElse(ResponseEntity.notFound().build());
     }
