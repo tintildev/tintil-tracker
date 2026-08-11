@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import com.tintil.tintiltracker.model.Project;
-import com.tintil.tintiltracker.repository.ProjectRepository;
+import com.tintil.tintiltracker.service.ProjectService;
 
 /**
  * REST-Controller für die Verwaltung von Projekten über HTTP-Endpunkte.
- * Bietet Schnittstellen für CRUD-Operationen unter der Basis-URL {@code /api/projects}.
+ * Bietet Schnittstellen für CRUD-Operationen unter der Basis-URL
+ * {@code /api/projects}.
  */
 @RestController
 @RequestMapping("/api/projects")
@@ -35,7 +36,9 @@ public class ProjectController {
 
     /**
      * Ruft alle in der Datenbank verfügbaren Projekte ab.
-     * <p>HTTP-Methode: GET /api/projects</p>
+     * <p>
+     * HTTP-Methode: GET /api/projects
+     * </p>
      *
      * @return Eine Liste aller {@link Project}-Objekte.
      */
@@ -46,7 +49,9 @@ public class ProjectController {
 
     /**
      * Erstellt ein neues Projekt in der Datenbank.
-     * <p>HTTP-Methode: POST /api/projects</p>
+     * <p>
+     * HTTP-Methode: POST /api/projects
+     * </p>
      *
      * @param project Das im JSON-Format im Request-Body übergebene {@link Project}.
      * @return Das erstellte Projekt mit HTTP-Status 201 (CREATED).
@@ -59,7 +64,9 @@ public class ProjectController {
 
     /**
      * Sucht ein einzelnes Projekt anhand seiner eindeutigen ID.
-     * <p>HTTP-Methode: GET /api/projects/{id}</p>
+     * <p>
+     * HTTP-Methode: GET /api/projects/{id}
+     * </p>
      *
      * @param id Die ID des gesuchten Projekts aus der URL.
      * @return {@link ResponseEntity} mit dem Projekt (200 OK) oder 404 NOT FOUND.
@@ -71,4 +78,3 @@ public class ProjectController {
                 .orElse(ResponseEntity.notFound().build());
     }
 }
-
