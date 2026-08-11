@@ -4,11 +4,13 @@ import com.tintil.tintiltracker.model.Project;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-/* Database Access via Spring Data JPA
+/**
+ * Spring Data JPA Repository für die {@link Project}-Entität.
+ * <p>
+ * Bietet automatische Datenbankoperationen (CRUD) wie
+ * {@code findAll()}, {@code findById()}, {@code save()} und {@code deleteById()}.
+ * </p>
  */
-
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, Long> {
-    // JpaRepository bringt automatisch CRUD-Methoden mit:
-    // findAll(), findById(), save(), deleteById(), etc.
 }
