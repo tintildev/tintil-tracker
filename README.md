@@ -1,5 +1,7 @@
 # Tintil Tracker 🎯
 
+Readme in: [English](README.md) | [Deutsch](README.de.md)
+
 Ein universeller, webbasierter Projekt- und Task-Tracker zur Verwaltung von Software-Projekten, Lernzielen, Renovierungsarbeiten und alltäglichen Vorhaben.
 
 ## 💡 Idee & Zielsetzung
