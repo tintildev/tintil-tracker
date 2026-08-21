@@ -45,6 +45,19 @@ com.tintil.tintiltracker
 4. **Model Layer (`@Entity`):** Definiert das objektrelationale Mapping (ORM) für die Datenbanktabellen.
 ---
 
+
+### 📑 Geplante API-Schnittstellen (Übersicht)
+
+| Methode | Endpunkt | Beschreibung |
+| :--- | :--- | :--- |
+| `GET` | `/api/projects` | Alle Projekte abrufen |
+| `POST` | `/api/projects` | Neues Projekt anlegen |
+| `GET` | `/api/projects/{id}` | Projektdetails & zugehörige Tasks abrufen |
+| `POST` | `/api/projects/{id}/tasks` | Neue Aufgabe zu einem Projekt hinzufügen |
+| `PATCH` | `/api/tasks/{id}` | Task-Status aktualisieren (`TODO`, `IN_PROGRESS`, `DONE`) |
+
+---
+
 ## 🚀 Roadmap
 
 - [x] Repository-Setup, Lizenz & Dokumentation (Initial)
@@ -59,17 +72,6 @@ com.tintil.tintiltracker
 
 ---
 
-## 📑 Geplante API-Schnittstellen (Übersicht)
-
-| Methode | Endpunkt | Beschreibung |
-| :--- | :--- | :--- |
-| `GET` | `/api/projects` | Alle Projekte abrufen |
-| `POST` | `/api/projects` | Neues Projekt anlegen |
-| `GET` | `/api/projects/{id}` | Projektdetails & zugehörige Tasks abrufen |
-| `POST` | `/api/projects/{id}/tasks` | Neue Aufgabe zu einem Projekt hinzufügen |
-| `PATCH` | `/api/tasks/{id}` | Task-Status aktualisieren (`TODO`, `IN_PROGRESS`, `DONE`) |
-
----
 
 ## 📜 Lizenz
 

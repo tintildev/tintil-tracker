@@ -71,6 +71,17 @@ public class Project {
         }
     }
 
+    // Helper Methode
+    public void addTask(Task task) {
+    tasks.add(task);
+    task.setProject(this);
+    }
+
+    public void removeTask(Task task) {
+        tasks.remove(task);
+        task.setProject(null);
+    }
+
     // --- Getter und Setter ---
 
     /**
@@ -162,4 +173,14 @@ public class Project {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+    public List<Task> getTasks() {
+    return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
+
+    
 }

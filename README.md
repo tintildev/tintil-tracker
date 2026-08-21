@@ -38,3 +38,44 @@ com.tintil.tintiltracker
 ├── service      # Business logic & domain validations
 ├── repository   # Data access layer via Spring Data JPA
 └── model        # Database entities & domain models
+
+### Layered Model:
+1. **Controller Layer (`@RestController`):** Handles HTTP requests, manages status codes, and delegates to the service layer.
+2. **Service Layer (`@Service`):** Encapsulates pure business logic, independent of HTTP and database specifics.
+3. **Repository Layer (`@Repository`):** Abstracts database queries using JPA/Hibernate.
+4. **Model Layer (`@Entity`):** Defines the object-relational mapping (ORM) for the database tables.
+---
+
+
+### 📑 Planned API Endpoints (Overview)
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/api/projects` | Retrieve all projects |
+| `POST` | `/api/projects` | Create a new project |
+| `GET` | `/api/projects/{id}` | Retrieve project details & associated tasks |
+| `POST` | `/api/projects/{id}/tasks` | Add a new task to a project |
+| `PATCH` | `/api/tasks/{id}` | Update task status (`TODO`, `IN_PROGRESS`, `DONE`) |
+
+---
+
+## 🚀 Roadmap
+
+- [x] Repository setup, license & documentation (initial)
+- [x] Backend API fundamentals (Spring Boot initialization)
+- [ ] Data modeling (Entities: `Project`, `Task`)
+- [ ] REST controllers & CRUD endpoints
+- [ ] API integration testing
+- [ ] Frontend setup (React + Vite + Tailwind CSS)
+- [ ] Deployment & Docker Containerization (Dockerfile & docker-compose)
+- [ ] Dashboard & Kanban/Task Views
+- [ ] Detailed Application Documentation & Setup Guide
+
+---
+
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE)
+
+Translated with DeepL.com (free version)

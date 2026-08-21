@@ -52,7 +52,7 @@ public class Task {
     }
 
     //
-    public Task(String title, String description, LocalDate startDate, LocalDate dueDate, Project project){
+    public Task(String title, String description, LocalDate startDate, LocalDate dueDate, TaskStatus status, Project project){
         this.title = title;
         this.description = description;
         this.startDate = startDate;
@@ -62,7 +62,61 @@ public class Task {
     }
 
     // --- Getters und Setters
-    //TODO: Getters and Setters erstellen
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public TaskStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TaskStatus status) {
+        this.status = status;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
 
 }
 
