@@ -62,7 +62,7 @@ com.tintil.tintiltracker
 
 - [x] Repository-Setup, Lizenz & Dokumentation (Initial)
 - [x] Backend API Fundament (Spring Boot Initialisierung)
-- [ ] Datenmodellierung (Entities: `Project`, `Task`)
+- [x] Datenmodellierung (Entities: `Project`, `Task`)
 - [ ] REST Controller & CRUD Endpunkte
 - [ ] Integrationstest der API
 - [ ] Frontend-Setup (React + Vite + Tailwind CSS)
