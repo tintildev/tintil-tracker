@@ -2,16 +2,22 @@ package com.tintil.tintiltracker.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Repräsentiert ein Projekt im Tintil Tracker System.
- * Diese Entity-Klasse wird von JPA auf die Datenbanktabelle "projects" abgebildet.
+ * Diese Entity-Klasse wird von JPA auf die Datenbanktabelle "projects"
+ * abgebildet.
  */
 @Entity
 @Table(name = "projects")
 public class Project {
 
-    /** Eindeutige ID des Projekts (Primärschlüssel, wird automatisch von der Datenbank generiert). */
+    /**
+     * Eindeutige ID des Projekts (Primärschlüssel, wird automatisch von der
+     * Datenbank generiert).
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,6 +34,9 @@ public class Project {
 
     /** Zeitpunkt, zu dem das Projekt erstellt wurde. */
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+    private List<Task> tasks = new ArrayList<>();
 
     /**
      * Standard-Konstruktor.
@@ -60,6 +69,17 @@ public class Project {
         if (this.createdAt == null) {
             this.createdAt = LocalDateTime.now();
         }
+    }
+
+    // Helper Methode
+    public void addTask(Task task) {
+    tasks.add(task);
+    task.setProject(this);
+    }
+
+    public void removeTask(Task task) {
+        tasks.remove(task);
+        task.setProject(null);
     }
 
     // --- Getter und Setter ---
@@ -153,4 +173,14 @@ public class Project {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+    public List<Task> getTasks() {
+    return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
+
+    
 }

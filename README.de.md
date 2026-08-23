@@ -45,21 +45,8 @@ com.tintil.tintiltracker
 4. **Model Layer (`@Entity`):** Definiert das objektrelationale Mapping (ORM) für die Datenbanktabellen.
 ---
 
-## 🚀 Roadmap
 
-- [x] Repository-Setup, Lizenz & Dokumentation (Initial)
-- [x] Backend API Fundament (Spring Boot Initialisierung)
-- [ ] Datenmodellierung (Entities: `Project`, `Task`)
-- [ ] REST Controller & CRUD Endpunkte
-- [ ] Integrationstest der API
-- [ ] Frontend-Setup (React + Vite + Tailwind CSS)
-- [ ] Deployment & Docker-Containerisierung (Dockerfile & docker-compose)
-- [ ] Dashboard & Kanban-/Task-Ansichten
-- [ ] Ausführliche Anwendungs-Dokumentation & Setup-Guide
-
----
-
-## 📑 Geplante API-Schnittstellen (Übersicht)
+### 📑 Geplante API-Schnittstellen (Übersicht)
 
 | Methode | Endpunkt | Beschreibung |
 | :--- | :--- | :--- |
@@ -70,6 +57,21 @@ com.tintil.tintiltracker
 | `PATCH` | `/api/tasks/{id}` | Task-Status aktualisieren (`TODO`, `IN_PROGRESS`, `DONE`) |
 
 ---
+
+## 🚀 Roadmap
+
+- [x] Repository-Setup, Lizenz & Dokumentation (Initial)
+- [x] Backend API Fundament (Spring Boot Initialisierung)
+- [x] Datenmodellierung (Entities: `Project`, `Task`)
+- [ ] REST Controller & CRUD Endpunkte
+- [ ] Integrationstest der API
+- [ ] Frontend-Setup (React + Vite + Tailwind CSS)
+- [ ] Deployment & Docker-Containerisierung (Dockerfile & docker-compose)
+- [ ] Dashboard & Kanban-/Task-Ansichten
+- [ ] Ausführliche Anwendungs-Dokumentation & Setup-Guide
+
+---
+
 
 ## 📜 Lizenz
 
