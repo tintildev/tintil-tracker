@@ -11,9 +11,9 @@ import java.util.List;
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long>{
     /**
-     * Findet alle Tasks, die zu einer bestimmten Projekt-ID gehören.
-     * Spring Data JPA generiert die SQL-Abfrage ("SELECT * FROM task WHERE project_id = ?")
-     * automatisch aus dem Methodennamen!
+     * Finds all tasks that belong to a specific project ID.
+     * Spring Data JPA automatically generates the SQL query (“SELECT * FROM task WHERE project_id = ?”)
+     * based on the method name!
      */
     List<Task> findByProjectId(Long projectId);
 }
