@@ -28,8 +28,6 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    // Todo: create, findAll, findById, update, delete methods for tasks
-
     /**
      * CREATE
      * Creates a new task assigned to a specific project.
@@ -75,8 +73,13 @@ public class TaskController {
      */
     @PatchMapping("/tasks/{id}/status")
     public ResponseEntity<Task> updateTaskStatus(@PathVariable Long id, @RequestParam TaskStatus status) {
-        // TODO: Call taskService.updateTaskStatus(id, status) and return ResponseEntity with HttpStatus.OK (200)
-        return null;
+        Optional<Task> optionalTask = taskService.getTaskById(id);
+        if(optionalTask.isPresent()) {
+            Task updatedTask = taskService.updateTaskStatus(id, status);
+            return ResponseEntity.ok(updatedTask); // 200 OK mit Task
+        } else {
+            return ResponseEntity.notFound().build();     // 404 Not Found ohne Body
+        }
     }
 
 
@@ -87,8 +90,13 @@ public class TaskController {
      */
     @DeleteMapping("/tasks/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
-        // TODO: Call taskService.deleteTask(id) and return ResponseEntity with HttpStatus.NO_CONTENT (204)
-        return null;
+        Optional<Task> optionalTask = taskService.getTaskById(id);
+        if(optionalTask.isPresent()) {
+            taskService.deleteTask(id);
+            return ResponseEntity.noContent().build(); // 204 No Content (Successfully deleted)
+        } else {
+            return ResponseEntity.noContent().build();     // 404 Not Found (The task did not exist)
+        }
     }
 
 
