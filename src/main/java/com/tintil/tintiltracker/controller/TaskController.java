@@ -9,6 +9,7 @@ import com.tintil.tintiltracker.model.Task;
 import com.tintil.tintiltracker.service.TaskService;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * REST controller for managing tasks.
@@ -58,8 +59,13 @@ public class TaskController {
      */
     @GetMapping("/tasks/{id}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long id) {
-        // TODO: Call taskService.getTaskById(id). Map Optional<Task> to 200 OK or 404 Not Found if missing
-        return null;
+        //Optional for null check
+        Optional<Task> optionalTask = taskService.getTaskById(id);
+        if (optionalTask.isPresent()) {
+            return ResponseEntity.ok(optionalTask.get()); // 200 OK mit Task
+        } else {
+            return ResponseEntity.notFound().build();     // 404 Not Found ohne Body
+        }
     }
 
     /**
