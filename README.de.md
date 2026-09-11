@@ -64,11 +64,13 @@ com.tintil.tintiltracker
 - [x] Backend API Fundament (Spring Boot Initialisierung)
 - [x] Datenmodellierung (Entities: `Project`, `Task`)
 - [x] REST Controller & CRUD Endpunkte
-- [ ] Integrationstest der API
-- [ ] Frontend-Setup (React + Vite + Tailwind CSS)
-- [ ] Deployment & Docker-Containerisierung (Dockerfile & docker-compose)
-- [ ] Dashboard & Kanban-/Task-Ansichten
-- [ ] Ausführliche Anwendungs-Dokumentation & Setup-Guide
+- [x] Testen der API-Integration (über cURL)
+- [ ] Einrichtung des Frontends (React + Vite + Tailwind CSS)
+- [ ] Integration der Frontend-API (Abrufen von Projekten und Aufgaben aus dem Backend)
+- [ ] Optimierung und Absicherung des Backends (Eingabevalidierung `@Valid` und globale Fehlerbehandlung)
+- [ ] Dashboard und Kanban-/Aufgabenansichten
+- [ ] Bereitstellung und Docker-Containerisierung (Dockerfile und docker-compose)
+- [ ] Ausführliche Anwendungsdokumentation und Einrichtungsanleitung
 
 ---
 
