@@ -1,5 +1,6 @@
 package com.tintil.tintiltracker.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class Project {
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+    @JsonManagedReference // "I own the list and am serialized normally"
     private List<Task> tasks = new ArrayList<>();
 
     /**

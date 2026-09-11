@@ -2,6 +2,7 @@ package com.tintil.tintiltracker.model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -44,6 +45,7 @@ public class Task {
 
     @ManyToOne //Many tasks to one project
     @JoinColumn(name= "project_id", nullable = false)
+    @JsonBackReference // "I am the backreference—please don't create nested JSON for me"
     private Project project;
 
     //constructor for JPA/Hibernate
