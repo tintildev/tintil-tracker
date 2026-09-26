@@ -4,14 +4,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Hauptklasse der Spring Boot Anwendung "Tintil Tracker".
- * Startet den Anwendungskontext und den eingebetteten Webserver.
+ * Main class of the Spring Boot application “Tintil Tracker”.
+ * Starts the application context and the embedded web server.
  */
 @SpringBootApplication
 public class TintilTrackerApplication {
 
     /**
-     * Hauptmethode zum Starten der Spring Boot Anwendung.
+     * The main method for starting the Spring Boot application.
      *
      * @param args Kommandozeilenargumente, die beim Anwendungsstart übergeben werden.
      */
