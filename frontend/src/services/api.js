@@ -17,43 +17,29 @@ export async function getTasksByProjectId(projectId) {
   
   return await response.json();
 }
+/**
+ * Send new task data to spring boot backend with POST, no formular events or ui stuff here.
+ * @param {} projectId 
+ * @param {*} taskData 
+ */
+export async function createTask(projectId, taskData) {
+  try{
+    const response = await fetch(`${API_BASE_URL}/projects/${projectId}/tasks`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(taskData), //JS Object to JSON string
+    });
+    if (!response.ok) {
+      // Handle error response
+      throw new Error(`Error creating task (Status: ${response.status})`);
+    }
 
-//POST send sata to spring boot backend
-async function PostDataForm(){
+    return await response.json(); // Return the created task data
 
-
-  // async function to handle form submission
-  const handleSubmit = async (event) => {
-    // Prevent the default form submission behavior
-    event.preventDefault();
-    const data = {
-      // Collect data from form inputs here
-      // For example:
-      // name: event.target.name.value,
-      // email: event.target.email.value,
-    };
-
-    //Todo: Implement the logic to send data to the backend using fetch or axios
-
-  }
-  // Example using fetch to send data to the backend
-  try{ const response = await fetch('https://api.example.com/users', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-  // error handling for the response
-  if (!response.ok) {
-    throw new Error(`Error sending data (Status: ${response.status})`);
-  }
-  const result = await response.json();
-  setMessage("Send Daata successfully");
-  console.log(result);
   }catch (error) {
-    console.error('Error sending data:', error);
-    setMessage("Error sending data");
+    console.error('API Error:', error);
+    throw error; // Rethrow the error to be handled by the caller
   }
-    
 }
