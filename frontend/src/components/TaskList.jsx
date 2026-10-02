@@ -1,28 +1,10 @@
-import { useEffect, useState } from 'react';
-import { getTasksByProjectId } from '../services/api';
-
-export default function TaskList({ projectId = 1 }) {
-  const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    // Daten beim Backend abrufen
-    getTasksByProjectId(projectId)
-      .then((data) => {
-        setTasks(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, [projectId]);
-
+export default function TaskList({ projectId = 1, tasks, loading, error }) {
+  // 1. loading
   if (loading) {
     return <div className="text-gray-500 font-medium">Lade Aufgaben vom Backend...</div>;
   }
 
+  // 2. loading finished but error occurred
   if (error) {
     return (
       <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg">
@@ -32,6 +14,7 @@ export default function TaskList({ projectId = 1 }) {
     );
   }
 
+  // 3. data loaded successfully, render the tasks
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold text-gray-800">Aufgaben (Projekt #{projectId})</h2>
