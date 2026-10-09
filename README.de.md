@@ -28,6 +28,27 @@ Das wichtigste für mich ist zu lernen, neue Technologien kennen zu lernen und n
 - **React** (mit Vite)
 - **Tailwind CSS** (Utility-First Styling)
 
+---
+
+## Voraussetzungen
+
+### Tools:
+
+- Java Development Kit (JDK 21 oder höher)
+- Node.js & npm (Node v20+)
+
+### Backend starten
+
+./mvnw spring-boot:run
+
+### Frontend starten (React + Vite)
+
+cd frontend
+npm install (beim ersten Start)
+npm run dev
+
+---
+
 ## Architektur & Projektstrutkru
 
 Ich entscheide in diesen Projekt für ein Backend mit **Schichten-Architektur (Layered Architecture)** zur strikten Trennung von Zuständigkeiten (_Separation of Concerns_). Weg von MVC Architektur hin zu einem modernen Standard.
@@ -60,23 +81,6 @@ com.tintil.tintiltracker
 | `PATCH` | `/api/tasks/{id}`          | Task-Status aktualisieren (`TODO`, `IN_PROGRESS`, `DONE`) |
 
 ---
-
-## Voraussetzungen
-
-### Tools:
-
-- Java Development Kit (JDK 21 oder höher)
-- Node.js & npm (Node v20+)
-
-### Backend starten
-
-./mvnw spring-boot:run
-
-### Frontend starten (React + Vite)
-
-cd frontend
-npm install (beim ersten Start)
-npm run dev
 
 ## 🚀 Roadmap
 

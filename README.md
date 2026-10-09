@@ -30,6 +30,25 @@ The core objective for me is **hands-on learning**: deeply understanding new tec
 
 ---
 
+## Prerequisites
+
+### Tools:
+
+- Java Development Kit (JDK 21 or higher)
+- Node.js & npm (Node v20+)
+
+### Start the backend
+
+./mvnw spring-boot:run3
+
+### Start the frontend (React + Vite)
+
+cd frontend
+npm install (on first launch)
+npm run dev
+
+---
+
 ## 🏗 Architecture & Project Structure
 
 This project adopts a layered backend architecture (**Layered Architecture**) to enforce strict **Separation of Concerns**, moving away from classic server-side MVC toward modern API standards.
@@ -61,20 +80,7 @@ com.tintil.tintiltracker
 
 ---
 
-## Prerequisites
-### Tools:
-- Java Development Kit (JDK 21 or higher)
-- Node.js & npm (Node v20+)
 
-### Start the backend
-./mvnw spring-boot:run3
-
-### Start the frontend (React + Vite)
-cd frontend
-npm install (on first launch)
-npm run dev
-
----
 
 ## 🚀 Roadmap
 
