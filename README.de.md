@@ -8,7 +8,7 @@ Ein universeller, webbasierter Projekt- und Task-Tracker zur Verwaltung von Soft
 
 Ziel von **Tintil Tracker** ist es, eine flexible Plattform zu schaffen, auf der Projekte unterschiedlichster Natur (Dev-Projekte, Heimwerken, Lernen) strukturiert in Phasen und Aufgaben unterteilt und visuell nachverfolgt werden können.
 
-Das Projekt wird im Rahmen eines fokussierten 6-Wochen-Entwicklungszyklus als Full-Stack-Anwendung aufgebaut. 
+Das Projekt wird im Rahmen eines fokussierten 6-Wochen-Entwicklungszyklus als Full-Stack-Anwendung aufgebaut.
 Das wichtigste für mich ist zu lernen, neue Technologien kennen zu lernen und nicht nur stumpf KI Vorschlägen zu folgen.
 
 ---
@@ -16,6 +16,7 @@ Das wichtigste für mich ist zu lernen, neue Technologien kennen zu lernen und n
 ## 🛠 Geplanter Tech Stack
 
 ### Backend
+
 - **Java 21+**
 - **Spring Boot 3.x** (REST API)
 - **Spring Data JPA**
@@ -23,12 +24,13 @@ Das wichtigste für mich ist zu lernen, neue Technologien kennen zu lernen und n
 - **Maven**
 
 ### Frontend
+
 - **React** (mit Vite)
 - **Tailwind CSS** (Utility-First Styling)
 
-
 ## Architektur & Projektstrutkru
-Ich entscheide in diesen Projekt für ein Backend mit **Schichten-Architektur (Layered Architecture)** zur strikten Trennung von Zuständigkeiten (*Separation of Concerns*). Weg von MVC Architektur hin zu einem modernen Standard. 
+
+Ich entscheide in diesen Projekt für ein Backend mit **Schichten-Architektur (Layered Architecture)** zur strikten Trennung von Zuständigkeiten (_Separation of Concerns_). Weg von MVC Architektur hin zu einem modernen Standard.
 
 ```text
 com.tintil.tintiltracker
@@ -39,24 +41,42 @@ com.tintil.tintiltracker
 ```
 
 ### Schichtenmodell:
+
 1. **Controller Layer (`@RestController`):** Nimmt HTTP-Anfragen entgegen, steuert Statuscodes und delegiert an die Service-Schicht.
 2. **Service Layer (`@Service`):** Kapselt die reine Geschäftslogik. Unabhängig von HTTP und Datenbankspezifika.
 3. **Repository Layer (`@Repository`):** Abstrahiert Datenbankabfragen über JPA/Hibernate.
 4. **Model Layer (`@Entity`):** Definiert das objektrelationale Mapping (ORM) für die Datenbanktabellen.
----
 
+---
 
 ### 📑 Geplante API-Schnittstellen (Übersicht)
 
-| Methode | Endpunkt | Beschreibung |
-| :--- | :--- | :--- |
-| `GET` | `/api/projects` | Alle Projekte abrufen |
-| `POST` | `/api/projects` | Neues Projekt anlegen |
-| `GET` | `/api/projects/{id}` | Projektdetails & zugehörige Tasks abrufen |
-| `POST` | `/api/projects/{id}/tasks` | Neue Aufgabe zu einem Projekt hinzufügen |
-| `PATCH` | `/api/tasks/{id}` | Task-Status aktualisieren (`TODO`, `IN_PROGRESS`, `DONE`) |
+| Methode | Endpunkt                   | Beschreibung                                              |
+| :------ | :------------------------- | :-------------------------------------------------------- |
+| `GET`   | `/api/projects`            | Alle Projekte abrufen                                     |
+| `POST`  | `/api/projects`            | Neues Projekt anlegen                                     |
+| `GET`   | `/api/projects/{id}`       | Projektdetails & zugehörige Tasks abrufen                 |
+| `POST`  | `/api/projects/{id}/tasks` | Neue Aufgabe zu einem Projekt hinzufügen                  |
+| `PATCH` | `/api/tasks/{id}`          | Task-Status aktualisieren (`TODO`, `IN_PROGRESS`, `DONE`) |
 
 ---
+
+## Voraussetzungen
+
+### Tools:
+
+- Java Development Kit (JDK 21 oder höher)
+- Node.js & npm (Node v20+)
+
+### Backend starten
+
+./mvnw spring-boot:run
+
+### Frontend starten (React + Vite)
+
+cd frontend
+npm install (beim ersten Start)
+npm run dev
 
 ## 🚀 Roadmap
 
@@ -65,15 +85,14 @@ com.tintil.tintiltracker
 - [x] Datenmodellierung (Entities: `Project`, `Task`)
 - [x] REST Controller & CRUD Endpunkte
 - [x] Testen der API-Integration (über cURL)
-- [ ] Einrichtung des Frontends (React + Vite + Tailwind CSS)
-- [ ] Integration der Frontend-API (Abrufen von Projekten und Aufgaben aus dem Backend)
+- [x] Einrichtung des Frontends (React + Vite + Tailwind CSS)
+- [x] Integration der Frontend-API (Abrufen von Projekten und Aufgaben aus dem Backend)
 - [ ] Optimierung und Absicherung des Backends (Eingabevalidierung `@Valid` und globale Fehlerbehandlung)
 - [ ] Dashboard und Kanban-/Aufgabenansichten
 - [ ] Bereitstellung und Docker-Containerisierung (Dockerfile und docker-compose)
 - [ ] Ausführliche Anwendungsdokumentation und Einrichtungsanleitung
 
 ---
-
 
 ## 📜 Lizenz
 

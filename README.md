@@ -16,6 +16,7 @@ The core objective for me is **hands-on learning**: deeply understanding new tec
 ## 🛠 Planned Tech Stack
 
 ### Backend
+
 - **Java 21+**
 - **Spring Boot 3.x / 4.x** (REST API)
 - **Spring Data JPA**
@@ -23,6 +24,7 @@ The core objective for me is **hands-on learning**: deeply understanding new tec
 - **Maven**
 
 ### Frontend
+
 - **React** (powered by Vite)
 - **Tailwind CSS** (Utility-First Styling)
 
@@ -59,6 +61,21 @@ com.tintil.tintiltracker
 
 ---
 
+## Prerequisites
+### Tools:
+- Java Development Kit (JDK 21 or higher)
+- Node.js & npm (Node v20+)
+
+### Start the backend
+./mvnw spring-boot:run3
+
+### Start the frontend (React + Vite)
+cd frontend
+npm install (on first launch)
+npm run dev
+
+---
+
 ## 🚀 Roadmap
 
 - [x] Repository setup, license & documentation (initial)
@@ -66,8 +83,8 @@ com.tintil.tintiltracker
 - [x] Data modeling (Entities: `Project`, `Task`)
 - [x] REST controllers & CRUD endpoints
 - [x] API Integration Testing (via cURL)
-- [ ] Frontend Setup (React + Vite + Tailwind CSS)
-- [ ] Frontend API Integration (Fetch Projects & Tasks from Backend)
+- [x] Frontend Setup (React + Vite + Tailwind CSS)
+- [x] Frontend API Integration (Fetch Projects & Tasks from Backend)
 - [ ] Backend Refinement & Hardening (Input Validation `@Valid` & Global Error Handling)
 - [ ] Dashboard & Kanban/Task Views
 - [ ] Deployment & Docker Containerization (Dockerfile & docker-compose)
@@ -81,3 +98,4 @@ com.tintil.tintiltracker
 This project is licensed under the [MIT License](LICENSE)
 
 Translated with DeepL.com (free version)
+```
