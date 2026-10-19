@@ -2,7 +2,12 @@ package com.tintil.tintiltracker.model;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import org.antlr.v4.runtime.misc.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -14,9 +19,11 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+
 /**
  * 
- * Task Verwaltet die Aufgaben, mit den Eigenschaften @parm id, title, starteDate, dueDate
+ * Task Verwaltet die Aufgaben, mit den Eigenschaften @parm id, title,
+ * starteDate, dueDate
  * 
  * @author tintil
  * @version 1.0
@@ -33,28 +40,33 @@ public class Task {
     @Column(nullable = false)
     private String title;
 
+    @NotBlank(message = "Description cannot be blank")
+    @Size(min = 5, max = 500, message = "Description must be between 5 and 500 characters")
     private String description;
 
+    @NotNull
     private LocalDate startDate;
     private LocalDate dueDate;
 
-    // @Enumerated(EnumType.STRING) speichert "TODO", "IN_PROGRESS" etc. als Text in der DB,
+    // @Enumerated(EnumType.STRING) speichert "TODO", "IN_PROGRESS" etc. als Text in
+    // der DB,
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TaskStatus status;
 
-    @ManyToOne //Many tasks to one project
-    @JoinColumn(name= "project_id", nullable = false)
+    @ManyToOne // Many tasks to one project
+    @JoinColumn(name = "project_id", nullable = false)
     @JsonBackReference // "I am the backreference—please don't create nested JSON for me"
     private Project project;
 
-    //constructor for JPA/Hibernate
-    public Task(){
+    // constructor for JPA/Hibernate
+    public Task() {
 
     }
 
     //
-    public Task(String title, String description, LocalDate startDate, LocalDate dueDate, TaskStatus status, Project project){
+    public Task(String title, String description, LocalDate startDate, LocalDate dueDate, TaskStatus status,
+            Project project) {
         this.title = title;
         this.description = description;
         this.startDate = startDate;
@@ -121,4 +133,3 @@ public class Task {
     }
 
 }
-
