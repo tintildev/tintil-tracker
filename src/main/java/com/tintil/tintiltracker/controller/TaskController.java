@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import com.tintil.tintiltracker.model.Task;
 import com.tintil.tintiltracker.service.TaskService;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +19,7 @@ import java.util.Optional;
  * 
  */
 
-@RestController 
+@RestController
 @RequestMapping("/api")
 public class TaskController {
 
@@ -34,7 +36,7 @@ public class TaskController {
      * POST /api/projects/{projectId}/tasks
      */
     @PostMapping("projects/{projectId}/tasks")
-    public ResponseEntity<Task> createTask(@PathVariable Long projectId, @RequestBody Task task) {
+    public ResponseEntity<Task> createTask(@PathVariable Long projectId, @RequestBody @Valid Task task) {
         Task createdTask = taskService.createTask(projectId, task);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTask);
     }
@@ -57,12 +59,12 @@ public class TaskController {
      */
     @GetMapping("/tasks/{id}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long id) {
-        //Optional for null check
+        // Optional for null check
         Optional<Task> optionalTask = taskService.getTaskById(id);
         if (optionalTask.isPresent()) {
             return ResponseEntity.ok(optionalTask.get()); // 200 OK mit Task
         } else {
-            return ResponseEntity.notFound().build();     // 404 Not Found ohne Body
+            return ResponseEntity.notFound().build(); // 404 Not Found ohne Body
         }
     }
 
@@ -74,14 +76,13 @@ public class TaskController {
     @PatchMapping("/tasks/{id}/status")
     public ResponseEntity<Task> updateTaskStatus(@PathVariable Long id, @RequestParam TaskStatus status) {
         Optional<Task> optionalTask = taskService.getTaskById(id);
-        if(optionalTask.isPresent()) {
+        if (optionalTask.isPresent()) {
             Task updatedTask = taskService.updateTaskStatus(id, status);
             return ResponseEntity.ok(updatedTask); // 200 OK mit Task
         } else {
-            return ResponseEntity.notFound().build();     // 404 Not Found ohne Body
+            return ResponseEntity.notFound().build(); // 404 Not Found ohne Body
         }
     }
-
 
     /**
      * DELETE
@@ -91,15 +92,12 @@ public class TaskController {
     @DeleteMapping("/tasks/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         Optional<Task> optionalTask = taskService.getTaskById(id);
-        if(optionalTask.isPresent()) {
+        if (optionalTask.isPresent()) {
             taskService.deleteTask(id);
             return ResponseEntity.noContent().build(); // 204 No Content (Successfully deleted)
         } else {
-            return ResponseEntity.noContent().build();     // 404 Not Found (The task did not exist)
+            return ResponseEntity.noContent().build(); // 404 Not Found (The task did not exist)
         }
     }
-
-
-
 
 }

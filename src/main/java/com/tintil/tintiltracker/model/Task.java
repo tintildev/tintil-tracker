@@ -19,7 +19,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-
 /**
  * 
  * Task Verwaltet die Aufgaben, mit den Eigenschaften @parm id, title,
@@ -38,6 +37,8 @@ public class Task {
     private Long id;
 
     @Column(nullable = false)
+    @NotBlank(message = "Title cannot be blank")
+    @Size(min = 3, max = 100, message = "Title must be between 3 and 100 characters")
     private String title;
 
     @NotBlank(message = "Description cannot be blank")
